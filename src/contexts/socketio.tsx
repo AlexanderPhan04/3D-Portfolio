@@ -8,7 +8,7 @@ import React, {
   useState,
 } from "react";
 import { io, Socket } from "socket.io-client";
-import { generateRandomCursor } from "../lib/generate-random-cursor"
+import { generateRandomCursor } from "../lib/generate-random-cursor";
 
 export type User = {
   socketId: string;
@@ -53,12 +53,38 @@ const SocketContextProvider = ({ children }: { children: ReactNode }) => {
 
   // SETUP SOCKET.IO
   useEffect(() => {
-    const username =  localStorage.getItem("username") || generateRandomCursor().name
-    const socket = io(process.env.NEXT_PUBLIC_WS_URL!, {
+    // Only connect if WS_URL is configured
+    const wsUrl = process.env.NEXT_PUBLIC_WS_URL;
+    if (!wsUrl) {
+      console.log("Socket.IO: No WS_URL configured, skipping connection");
+      return;
+    }
+
+    const username =
+      localStorage.getItem("username") || generateRandomCursor().name;
+    const socket = io(wsUrl, {
       query: { username },
     });
     setSocket(socket);
-    socket.on("connect", () => {});
+
+    // 🔍 LOG ALL OUTGOING EVENTS
+    const originalEmit = socket.emit.bind(socket);
+    socket.emit = function (event: string, ...args: any[]) {
+      console.log("📤 Socket.IO SEND:", event, args);
+      return originalEmit(event, ...args);
+    };
+
+    // 🔍 LOG ALL INCOMING EVENTS
+    socket.onAny((event, ...args) => {
+      console.log("📥 Socket.IO RECEIVE:", event, args);
+    });
+
+    socket.on("connect", () => {
+      console.log("✅ Socket.IO: Connected to server, ID:", socket.id);
+    });
+    socket.on("disconnect", (reason) => {
+      console.log("❌ Socket.IO: Disconnected, reason:", reason);
+    });
     socket.on("msgs-receive-init", (msgs) => {
       setMsgs(msgs);
     });
