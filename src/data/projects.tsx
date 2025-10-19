@@ -501,7 +501,13 @@ const projects: Project[] = [
     category: "Portfolio",
     title: "My Portfolio",
     src: "/assets/projects-screenshots/AlexPortfolio/landing.png",
-    screenshots: ["1.png"],
+    screenshots: [
+      "landing.png",
+      "skills.png",
+      "navbar.png",
+      "projects.png",
+      "project.png",
+    ],
     live: "http://Alexander Phan.vercel.app",
     github: "https://github.com/https://github.com/AlexanderPhan04/Portfolio",
     skills: {
