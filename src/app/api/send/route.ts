@@ -23,9 +23,10 @@ export async function POST(req: Request) {
       return Response.json({ error: zodError?.message }, { status: 400 });
 
     const { data: resendData, error: resendError } = await resend.emails.send({
-      from: "Porfolio <onboarding@resend.dev>",
+      from: "Portfolio Contact <onboarding@resend.dev>",
       to: [config.email],
-      subject: "Contact me from portfolio",
+      replyTo: zodData.email,
+      subject: `Portfolio Contact from ${zodData.fullName}`,
       react: EmailTemplate({
         fullName: zodData.fullName,
         email: zodData.email,
