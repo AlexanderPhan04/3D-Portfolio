@@ -500,7 +500,7 @@ const projects: Project[] = [
     id: "portfolio",
     category: "Portfolio",
     title: "My Portfolio",
-    src: "/assets/projects-screenshots/portfolio/landing.png",
+    src: "/assets/projects-screenshots/AlexPortfolio/landing.png",
     screenshots: ["1.png"],
     live: "http://Alexander Phan.vercel.app",
     github: "https://github.com/https://github.com/AlexanderPhan04/Portfolio",
@@ -535,15 +535,15 @@ const projects: Project[] = [
           </p>
           <SlideShow
             images={[
-              `${BASE_PATH}/portfolio/landing.png`,
-              `${BASE_PATH}/portfolio/skills.png`,
+              `${BASE_PATH}/AlexPortfolio/landing.png`,
+              `${BASE_PATH}/AlexPortfolio/skills.png`,
             ]}
           />
           <TypographyH3 className="my-4 ">Space Theme</TypographyH3>
           <p className="font-mono mb-2">
             Dark background + floating particles = out-of-this-world cool.
           </p>
-          <SlideShow images={[`${BASE_PATH}/portfolio/navbar.png`]} />
+          <SlideShow images={[`${BASE_PATH}/AlexPortfolio/navbar.png`]} />
           <TypographyH3 className="my-4 mt-8">Projects</TypographyH3>
 
           <p className="font-mono mb-2">
@@ -551,8 +551,8 @@ const projects: Project[] = [
           </p>
           <SlideShow
             images={[
-              `${BASE_PATH}/portfolio/projects.png`,
-              `${BASE_PATH}/portfolio/project.png`,
+              `${BASE_PATH}/AlexPortfolio/projects.png`,
+              `${BASE_PATH}/AlexPortfolio/project.png`,
             ]}
           />
           <p className="font-mono mb-2 mt-8 text-center">
