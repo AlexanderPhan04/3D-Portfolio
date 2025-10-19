@@ -2,7 +2,7 @@
 
 Welcome to my personal portfolio repository! This is where I showcase my skills, projects, and creativity through jaw-dropping 3D animations, slick interactions, and fluid motion design. Built with modern web technologies to create an immersive, interactive experience.Welcome to the repository for my personal portfolio website! This is where I showcase my skills, projects, and a bit of my personality through jaw-dropping 3D animations, slick interactions, and fluid motion. If you're into creative web design, you're in the right place.
 
-![Portfolio Preview](https://github.com/AlexanderPhan04/3D-Portfolio/blob/main/public/assets/projects-screenshots/portfolio/landing.png?raw=true)![Portfolio Preview](https://github.com/AlexanderPhan04/Portfolio/blob/main/public/assets/projects-screenshots/portfolio/landing.png?raw=true)
+![Portfolio Preview](https://raw.githubusercontent.com/AlexanderPhan04/3D-Portfolio/refs/heads/main/public/assets/seo/og-image.png)![Portfolio Preview](https://github.com/AlexanderPhan04/Portfolio/blob/main/public/assets/projects-screenshots/portfolio/landing.png?raw=true)
 
 ## ✨ Features## 🔥 Features
 
